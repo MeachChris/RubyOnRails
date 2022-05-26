@@ -1,0 +1,25 @@
+##############MVC FUNDAMENTALS##################################
+
+MVC, separation between presentation layer and applicaton layer and back end.
+
+Model - can communicate with tables in app. (User, Post, Article)
+View - what the user sees, (home.html.erb, new.html.erb , my_portfolio.html.erb)
+Controller - brains behind application (users_controller, posts_controller, articles_controller)
+
+MVC - Model, View, Controller
+
+General flow of Rails application:
+
+-> Request made at browser
+
+-> Request received at router of rails application
+
+-> Request routed to appropriate action in a controller
+
+-> Controller#action either renders a view template or communicates with model
+
+-> Model communicates with database
+
+-> Model sends back information to controller
+
+-> Controller renders view
