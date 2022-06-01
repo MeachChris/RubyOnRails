@@ -13,16 +13,21 @@ class ArticlesController < ApplicationController
     end
 
     def new
-
+        #must instantiate a new article for if the "if" condition doesn't work on first load.
+        @article = Article.new
     end
 
     def create
         #render plain: params[:article]
         #permits the title and description from the article to be saved...
         @article = Article.new(params.require(:article).permit(:title, :description))
-        @article.save
+        if @article.save
+            flash[:notice] = "article was created succesfully."
         #this is how you make a redirect...  Find the path in endpoints and append _path to it.
         #can also shorten this to redirect_to @article
-        redirect_to article_path(@article)
+            redirect_to article_path(@article)
+        else
+            render 'new'
+        end
     end
 end
