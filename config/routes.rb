@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   # rails routes --expanded [[To check the routes in console]]
   root 'pages#home'
   get 'about', to: 'pages#about'
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+  #now that they are all exposed you can just do this....
+  resources :articles
+  # instead of 
+   #  resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+ 
 
 end
