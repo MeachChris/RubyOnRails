@@ -10,10 +10,8 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-
-    <% end %>
+  <% #this will render _messages.html.erb, or include all of the code here.  Cleans up the code. (Kind of like an import or module) %>
+    <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
